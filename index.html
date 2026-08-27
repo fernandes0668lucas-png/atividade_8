@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório de Acessibilidade - MIHC</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <header class="main-header">
+      <div class="header-badge">Relatório Técnico de QA</div>
+      <h1>Avaliação de Acessibilidade Mobile</h1>
+      
+      <!-- Academic Information -->
+      <div class="course-info">
+        <div class="info-item">
+          <span class="info-label">Curso:</span>
+          <span class="info-value">Tecnologia em Análise e Desenvolvimento de Sistemas</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Disciplina:</span>
+          <span class="info-value">MIHC</span>
+        </div>
+        <div class="info-item team-item">
+          <span class="info-label">Equipe / Integrantes:</span>
+          <span class="info-value">Alexandre, Davi e João</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="summary-cards">
+      <div class="summary-card">
+        <span class="summary-number">3</span>
+        <span class="summary-label">Apps Analisados</span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-number">3</span>
+        <span class="summary-label">Bugs Detectados</span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-number">100%</span>
+        <span class="summary-label">Soluções Mapeadas</span>
+      </div>
+    </div>
+
+    <main class="content-grid">
+      <!-- App 1: Netflix -->
+      <article class="card">
+        <div class="app-header">
+          <div class="app-info">
+            <span class="app-tag tag-netflix">Netflix</span>
+            <h2>1. Área de Toque Insuficiente</h2>
+          </div>
+          <span class="bug-badge type-touch">Usabilidade / Toque</span>
+        </div>
+
+        <div class="bug-details">
+          <div class="detail-item">
+            <span class="detail-label">Elemento afetado:</span>
+            <code>com.netflix.mediaclient:id/2131428387</code>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Dimensão identificada:</span>
+            <span class="metric-bad">33dp de altura</span>
+          </div>
+        </div>
+
+        <!-- Placeholder para a Imagem/Screenshot do App Netflix -->
+        <div class="image-container">
+          <img src="netflix_bug.png" alt="Screenshot do Bug no aplicativo Netflix" class="app-screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Inserir imagem/screenshot do bug no Netflix aqui</span>
+            <small>(Substitua 'src' pela imagem correspondente: <code>netflix_bug.png</code>)</small>
+          </div>
+        </div>
+
+        <section class="section-box issue-box">
+          <div class="box-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span>Bug / Erro Encontrado</span>
+          </div>
+          <p>O item clicável selecionado no aplicativo possui uma altura de apenas <strong>33dp</strong>, ficando abaixo do tamanho mínimo estipulado pelas diretrizes de acessibilidade (WCAG / Material Design). Isso prejudica diretamente a navegabilidade de pessoas com tremores ou limitações motoras.</p>
+        </section>
+
+        <section class="section-box solution-box">
+          <div class="box-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>Sugestão de Solução</span>
+          </div>
+          <p>Expandir o elemento para a dimensão mínima recomendada de <strong>48dp × 48dp</strong>. Isso pode ser corrigido aplicando <code>android:minHeight="48dp"</code> na View do layout XML ou adicionando padding ao redor da área de toque sem alterar a escala do texto.</p>
+        </section>
+      </article>
+
+      <!-- App 2: Bus2 -->
+      <article class="card">
+        <div class="app-header">
+          <div class="app-info">
+            <span class="app-tag tag-bus2">Bus2</span>
+            <h2>2. Inconsistência no Rótulo (OCR)</h2>
+          </div>
+          <span class="bug-badge type-label">Leitor de Tela</span>
+        </div>
+
+        <div class="bug-details">
+          <div class="detail-item">
+            <span class="detail-label">Coordenadas:</span>
+            <code>[65,319][1203,722]</code>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Texto Errado:</span>
+            <span class="metric-bad">"Começar a usar 0 app"</span>
+          </div>
+        </div>
+
+        <!-- Placeholder para a Imagem/Screenshot do App Bus2 -->
+        <div class="image-container">
+          <img src="bus2_bug.png" alt="Screenshot do Bug no aplicativo Bus2" class="app-screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Inserir imagem/screenshot do bug no Bus2 aqui</span>
+            <small>(Substitua 'src' pela imagem correspondente: <code>bus2_bug.png</code>)</small>
+          </div>
+        </div>
+
+        <section class="section-box issue-box">
+          <div class="box-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span>Bug / Erro Encontrado</span>
+          </div>
+          <p>O rótulo de acessibilidade capturado pelo leitor de tela trocou a letra "o" pelo numeral zero ("0"), lendo o texto como <em>"Começar a usar 0 app"</em>. Essa falha ocorre ao delegar a leitura a um sistema automatizado de OCR em imagens em vez de usar strings acessíveis de texto.</p>
+        </section>
+
+        <section class="section-box solution-box">
+          <div class="box-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>Sugestão de Solução</span>
+          </div>
+          <p>Definir explicitamente o rótulo de acessibilidade no código usando a propriedade <code>contentDescription="Começar a usar o app"</code> (Android) ou <code>accessibilityLabel</code> (iOS). Evitar dependência de reconhecimento de imagem para conteúdos textuais.</p>
+        </section>
+      </article>
+
+      <!-- App 3: Caer Mobile -->
+      <article class="card">
+        <div class="app-header">
+          <div class="app-info">
+            <span class="app-tag tag-caer">Caer Mobile</span>
+            <h2>3. Leitura Incompleta de Unidades</h2>
+          </div>
+          <span class="bug-badge type-data">Acessibilidade de Dados</span>
+        </div>
+
+        <div class="bug-details">
+          <div class="detail-item">
+            <span class="detail-label">Coordenadas:</span>
+            <code>[0,965][219,1550]</code>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Leitura Truncada:</span>
+            <span class="metric-bad">"0.Omm"</span>
+          </div>
+        </div>
+
+        <!-- Placeholder para a Imagem/Screenshot do App Caer Mobile -->
+        <div class="image-container">
+          <img src="caer_bug.png" alt="Screenshot do Bug no aplicativo Caer Mobile" class="app-screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="image-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Inserir imagem/screenshot do bug no Caer Mobile aqui</span>
+            <small>(Substitua 'src' pela imagem correspondente: <code>caer_bug.png</code>)</small>
+          </div>
+        </div>
+
+        <section class="section-box issue-box">
+          <div class="box-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span>Bug / Erro Encontrado</span>
+          </div>
+          <p>No card que exibe os dados pluviométricos (chuvas), o leitor de tela anuncia <em>"0.Omm"</em> com a unidade e valores truncados/truncamento numérico, impossibilitando que pessoas cegas ou com baixa visão compreendam a métrica apresentada.</p>
+        </section>
+
+        <section class="section-box solution-box">
+          <div class="box-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>Sugestão de Solução</span>
+          </div>
+          <p>Atribuir uma descrição legível e por extenso na camada de acessibilidade do componente gráfico. Em vez de ler apenas os símbolos, configure a propriedade para anunciar: <code>contentDescription="Chuva acumulada: 0 milímetros"</code>.</p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="main-footer">
+      <p>Relatório de Acessibilidade — Tecnologia em Análise e Desenvolvimento de Sistemas — Disciplina: MIHC</p>
+    </footer>
+  </div>
+
+</body>
+</html>
